@@ -169,11 +169,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        FullVRGames\Providers\AppServiceProvider::class,
+        FullVRGames\Providers\AuthServiceProvider::class,
+        // FullVRGames\Providers\BroadcastServiceProvider::class,
+        FullVRGames\Providers\EventServiceProvider::class,
+        FullVRGames\Providers\RouteServiceProvider::class,
 
     ],
 
