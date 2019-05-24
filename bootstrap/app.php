@@ -28,17 +28,17 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
-    FullVRGames\Http\Kernel::class
+    VRSense\Http\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    FullVRGames\Console\Kernel::class
+    VRSense\Console\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    FullVRGames\Exceptions\Handler::class
+    VRSense\Exceptions\Handler::class
 );
 
 /*

@@ -1,6 +1,6 @@
 <?php
 
-namespace FullVRGames\Http\Controllers;
+namespace VRSense\Http\Controllers;
 
 use Illuminate\Http\Request;
 

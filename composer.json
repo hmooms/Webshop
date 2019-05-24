@@ -33,7 +33,7 @@
     },
     "autoload": {
         "psr-4": {
-            "FullVRGames\\": "app/"
+            "VRSense\\": "app/"
         },
         "classmap": [
             "database/seeds",

@@ -1,8 +1,8 @@
 <?php
 
-namespace FullVRGames\Http\Controllers;
+namespace VRSense\Http\Controllers;
 
-use FullVRGames\order_details;
+use VRSense\order_details;
 use Illuminate\Http\Request;
 
 class OrderDetailsController extends Controller
@@ -41,7 +41,7 @@ class OrderDetailsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \FullVRGames\order_details  $order_details
+     * @param  \VRSense\order_details  $order_details
      * @return \Illuminate\Http\Response
      */
     public function show(order_details $order_details)
@@ -52,7 +52,7 @@ class OrderDetailsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \FullVRGames\order_details  $order_details
+     * @param  \VRSense\order_details  $order_details
      * @return \Illuminate\Http\Response
      */
     public function edit(order_details $order_details)
@@ -64,7 +64,7 @@ class OrderDetailsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \FullVRGames\order_details  $order_details
+     * @param  \VRSense\order_details  $order_details
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, order_details $order_details)
@@ -75,7 +75,7 @@ class OrderDetailsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \FullVRGames\order_details  $order_details
+     * @param  \VRSense\order_details  $order_details
      * @return \Illuminate\Http\Response
      */
     public function destroy(order_details $order_details)

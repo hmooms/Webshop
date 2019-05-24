@@ -1,8 +1,8 @@
 <?php
 
-namespace FullVRGames\Http\Controllers\Auth;
+namespace VRSense\Http\Controllers\Auth;
 
-use FullVRGames\Http\Controllers\Controller;
+use VRSense\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller

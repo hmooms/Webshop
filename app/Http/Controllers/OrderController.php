@@ -1,8 +1,8 @@
 <?php
 
-namespace FullVRGames\Http\Controllers;
+namespace VRSense\Http\Controllers;
 
-use FullVRGames\order;
+use VRSense\order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -41,7 +41,7 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \FullVRGames\order  $order
+     * @param  \VRSense\order  $order
      * @return \Illuminate\Http\Response
      */
     public function show(order $order)
@@ -52,7 +52,7 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \FullVRGames\order  $order
+     * @param  \VRSense\order  $order
      * @return \Illuminate\Http\Response
      */
     public function edit(order $order)
@@ -64,7 +64,7 @@ class OrderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \FullVRGames\order  $order
+     * @param  \VRSense\order  $order
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, order $order)
@@ -75,7 +75,7 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \FullVRGames\order  $order
+     * @param  \VRSense\order  $order
      * @return \Illuminate\Http\Response
      */
     public function destroy(order $order)

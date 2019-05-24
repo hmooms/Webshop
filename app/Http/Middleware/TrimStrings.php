@@ -1,6 +1,6 @@
 <?php
 
-namespace FullVRGames\Http\Middleware;
+namespace VRSense\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\TrimStrings as Middleware;
 
