@@ -4,6 +4,7 @@ namespace VRSense\Http\Controllers;
 
 use VRSense\product;
 use Illuminate\Http\Request;
+use VRSense\category;
 
 class ProductController extends Controller
 {
@@ -15,7 +16,8 @@ class ProductController extends Controller
     public function index()
     {
         $products = product::all();
-        return view('store.store')->with('products', $products);
+        $categories = category::all();
+        return view('store.home')->with('products', $products)->with('categories', $categories);
     }
 
     /**
