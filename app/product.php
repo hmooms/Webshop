@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class product extends Model
 {
     public function orders(){
-        $this->belongsToMany('App/order');
+        return $this->belongsToMany('VRSense\order');
     }
 
-    public function categories(){
-        $this->belongsToMany('App/category');
+    public function category(){
+        return $this->belongsTo('VRSense\category');
     }
 }
