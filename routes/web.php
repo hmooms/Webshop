@@ -13,10 +13,12 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', function()
 {
-    return view('homepage');
+    return redirect('/store');
 });
 
 Route::resource('/store', 'ProductController');
+Route::resource('/category', 'CategoryController');
+
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');

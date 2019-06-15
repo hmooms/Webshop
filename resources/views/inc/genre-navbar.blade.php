@@ -4,11 +4,11 @@
 <div class="collapse navbar-collapse" id="navbarColor03">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" >
-        <a class="nav-link" href="#" >All</a>
+        <a class="nav-link" href="{{ url('/store') }}" >All</a>
       </li>
 @foreach($categories as $category)
       <li class="nav-item">
-        <a class="nav-link" href="#">{{$category->description}}</a>
+        <a class="nav-link" href="{{ url('/category/'.$category->id) }}">{{$category->description}}</a>
       </li>
 @endforeach
     </ul>

@@ -4,47 +4,28 @@
 
 @include('inc.genre-navbar')
 
-<div class="container">
+<div class="container p-0">
 
-    <div class="card">
+    <div class="jumbotron pb-3">
 
-        <div class="card-header" style="text-align:center;">
+        <div class="display-3">
 
             {{$product->name}}
 
         </div>
 
-        <div class="card-body">
-
-            <div class="row">
-
-                <div class="col-md-9">
+        <hr class="my-4">
                     
-                    {{$product->description}}
+        {{$product->description}}
 
-                    <hr>
+        <hr class="mt-4">
 
-                    {{$product->category->description}}
+        <p>genre: {{$product->category->description}}</p>
 
-                </div>
+        <button class="btn btn-success float-right">Add to cart</button>
 
-                <div class="col-md-3">
-                                    
-                    €{{$product->price}}
-
-                    <hr>
-
-                    add to cart
-                
-                </div>
-
-
-
-            </div>
-
-        </div>
-
-
+        <p>Price: €{{$product->price}},99</p>
+        
     </div>    
 
 </div>
