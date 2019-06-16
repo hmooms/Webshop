@@ -19,6 +19,10 @@ Route::get('/', function()
 Route::resource('/store', 'ProductController');
 Route::resource('/category', 'CategoryController');
 
+Route::post('/add', 'ShoppingcartController@addToCart')->name('add');
+Route::post('/remove', 'ShoppingcartController@removeFromCart')->name('remove');
+Route::get('/cart', 'ShoppingcartController@index')->name('shoppingcart');
+
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
