@@ -4,82 +4,54 @@ namespace VRSense\Http\Controllers;
 
 use VRSense\order_details;
 use Illuminate\Http\Request;
+use VRSense\cart;
+use Auth;
+use VRSense\order;
 
 class OrderDetailsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $orders = (Auth::User())? Auth::User()->order_details : null;
+
+        return view('orders.overview')->with('orders', $orders);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+    public function store()
     {
-        //
+        $cart = new cart;
+
+        $order = new order_details;
+        $order->user_id = Auth::User()->id;
+        $order->total_price = $cart->calculateTotalPrice();
+        $order->save();
+
+        foreach ($cart->items as $item){
+            $orderDetails = new order;
+            $orderDetails->quantity = $item['quantity'];
+            $orderDetails->price = $item['item']->price * $item['quantity'];
+            $orderDetails->order_details_id = $order->id;
+            $orderDetails->product_id = $item['item']->id;
+            $orderDetails->save();
+        }
+
+        $cart->emptyCart(); 
+        
+        return redirect('/store');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+   
+    public function show($id)
     {
-        //
+        $orderDetails = order_details::find($id);
+
+        if ($orderDetails->user_id == Auth::User()->id){
+            return view('orders.show')->with('orderDetails', $orderDetails);
+        }
+        else {
+            return redirect()->back();
+        }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \VRSense\order_details  $order_details
-     * @return \Illuminate\Http\Response
-     */
-    public function show(order_details $order_details)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \VRSense\order_details  $order_details
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(order_details $order_details)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \VRSense\order_details  $order_details
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, order_details $order_details)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \VRSense\order_details  $order_details
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(order_details $order_details)
-    {
-        //
-    }
 }

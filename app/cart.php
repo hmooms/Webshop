@@ -46,6 +46,12 @@ class cart
     }
 
 
+    public function emptyCart()
+    {
+        $this->items = [];
+        cart::updateSession($this->items);
+    }
+
     public function calculateTotalPrice()
     {
         $total = 0;

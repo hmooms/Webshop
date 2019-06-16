@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class order_details extends Model
 {
-    public function orders(){
-        $this->hasMany('VRSense/order');
+    public function order(){
+        return $this->hasMany('VRSense\order');
     }
 }

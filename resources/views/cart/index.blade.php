@@ -25,6 +25,10 @@
   </div>
   <div class="card-body">
 
+    Genre: {{$item['item']->category->description}}
+
+    <hr>
+
     Quantity: {{$item['quantity']}}
 
     {!! Form::open(['action' => 'ShoppingcartController@addToCart', 'method' => 'POST']) !!}
@@ -43,7 +47,7 @@
     
     {!! Form::close() !!}
 
-      <hr>
+    <hr>
     Price: €{{$item['item']->price * $item['quantity']}},-
 
   </div>
@@ -58,7 +62,7 @@
 
     <p class="btn btn-dark">total: €{{$cart->calculateTotalPrice()}},-</p>
 
-    <p class="btn btn-primary">BUY NOW!</p>
+    <a href="{{route('buy')}}" class="btn btn-primary">BUY NOW!</a>
 
 
 </div>
