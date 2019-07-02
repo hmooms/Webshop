@@ -1,6 +1,6 @@
 <?php
 
-namespace FullVRGames;
+namespace VRSense;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -10,6 +10,11 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+
+    public function order_details()
+    {
+        return $this->hasMany('VRSense\order_details');
+    }
     /**
      * The attributes that are mass assignable.
      *

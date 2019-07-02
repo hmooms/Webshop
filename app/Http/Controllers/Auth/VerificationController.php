@@ -1,8 +1,8 @@
 <?php
 
-namespace FullVRGames\Http\Controllers\Auth;
+namespace VRSense\Http\Controllers\Auth;
 
-use FullVRGames\Http\Controllers\Controller;
+use VRSense\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 
 class VerificationController extends Controller
@@ -25,7 +25,7 @@ class VerificationController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/store';
 
     /**
      * Create a new controller instance.

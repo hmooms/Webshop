@@ -1,6 +1,6 @@
 <?php
 
-namespace FullVRGames\Providers;
+namespace VRSense\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // 'FullVRGames\Model' => 'FullVRGames\Policies\ModelPolicy',
+        // 'VRSense\Model' => 'VRSense\Policies\ModelPolicy',
     ];
 
     /**

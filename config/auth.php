@@ -68,7 +68,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => FullVRGames\User::class,
+            'model' => VRSense\User::class,
         ],
 
         // 'users' => [

@@ -1,9 +1,9 @@
 <?php
 
-namespace FullVRGames\Http\Controllers\Auth;
+namespace VRSense\Http\Controllers\Auth;
 
-use FullVRGames\User;
-use FullVRGames\Http\Controllers\Controller;
+use VRSense\User;
+use VRSense\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/store';
 
     /**
      * Create a new controller instance.
@@ -59,7 +59,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \FullVRGames\User
+     * @return \VRSense\User
      */
     protected function create(array $data)
     {

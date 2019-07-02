@@ -1,6 +1,6 @@
 <?php
 
-namespace FullVRGames\Http\Middleware;
+namespace VRSense\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Fideloper\Proxy\TrustProxies as Middleware;
