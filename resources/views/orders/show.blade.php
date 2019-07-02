@@ -7,8 +7,6 @@
 
 <div class="row justify-content-center">
 
-@if($orderDetails != null)
-
 @foreach($orderDetails->order as $order)
 
 <div class="card text-white bg-secondary m-2" onclick="location.href = '{{ route('store.show', ['product_id' => $order->product->id]) }}'" style="text-align:center;width: 20rem;">
@@ -42,13 +40,6 @@
 
 </div>
 
-@else
-<h1>There is no order?</h1>
-  
-</div>
-
-
-@endif
 </div>
 
 @endsection
