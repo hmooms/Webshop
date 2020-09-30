@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="bg-dark">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
@@ -38,6 +38,12 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        
+                        <!-- Shopping cart -->
+                        <li class="nav-item">
+                            <a class="nav-link btn-primary font-weight-bold" href="{{ route('shoppingcart') }}">shoppingcart</a>
+                        </li>
+                        
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -49,9 +55,7 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item">
-                                <a class="nav-link btn-primary font-weight-bold" href="{{ route('shoppingcart') }}">shoppingcart</a>
-                            </li>
+                            
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -76,7 +80,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 no-padding-top" >
             @yield('content')
         </main>
     </div>

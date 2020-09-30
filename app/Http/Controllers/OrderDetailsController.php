@@ -6,6 +6,7 @@ use VRSense\order_details;
 use VRSense\cart;
 use Auth;
 use VRSense\order;
+use VRSense\category;
 
 class OrderDetailsController extends Controller
 {
@@ -15,8 +16,10 @@ class OrderDetailsController extends Controller
         // check is user is logged in and if so gives the order details to the variable 
         $orders = (Auth::User())? Auth::User()->order_details : null;
 
+        $categories = category::all();
+
         // shows the view with the orders variable
-        return view('orders.overview')->with('orders', $orders);
+        return view('orders.overview')->with('orders', $orders)->with('categories', $categories);
     }
 
     // buy the products and stores the order into the database
@@ -28,7 +31,7 @@ class OrderDetailsController extends Controller
         // instantiate new order_details
         $orderDetails = new order_details;
         // sets the user_id
-        $orderDetails->user_id = Auth::User()->id;
+        $orderDetails->user_id = (Auth::User())? Auth::User()->id : null;
         // sets the total_price
         $orderDetails->total_price = $cart->calculateTotalPrice();
         // inserts the above given variables into the database
@@ -47,7 +50,7 @@ class OrderDetailsController extends Controller
             // set the foreign product_id
             $order->product_id = $item['product']->id;
             // instert it all in the database
-            $orderDetails->save();
+            $order->save();
         }
         // a method in the cart object to clear the cart after buying.
         $cart->emptyCart(); 
@@ -62,10 +65,12 @@ class OrderDetailsController extends Controller
         // get the orderdetails with this id 
         $orderDetails = order_details::find($id);
 
+        $categories = category::all();
+
         // check if the order is actuall from the user so you wont see someone else's order when you dont have an order with this id
         if ($orderDetails['user_id'] == Auth::User()->id && $orderDetails != null){
             // show order with the details
-            return view('orders.show')->with('orderDetails', $orderDetails);
+            return view('orders.show')->with('orderDetails', $orderDetails)->with('categories', $categories);
         }
         // if there is no order with that id return to store
         else {

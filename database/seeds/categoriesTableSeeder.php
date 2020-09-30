@@ -13,11 +13,11 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         $data = array(
-            array('description'=>'Action', 'created_at'=>date('Y-m-d H:i:s'), 'updated_at'=> date('Y-m-d H:i:s')),
-            array('description'=>'RPG', 'created_at'=>date('Y-m-d H:i:s'), 'updated_at'=> date('Y-m-d H:i:s')),
-            array('description'=>'Horror', 'created_at'=>date('Y-m-d H:i:s'), 'updated_at'=> date('Y-m-d H:i:s')),
-            array('description'=>'Puzzle', 'created_at'=>date('Y-m-d H:i:s'), 'updated_at'=> date('Y-m-d H:i:s')),
-            array('description'=>'Multiplayer', 'created_at'=>date('Y-m-d H:i:s'), 'updated_at'=> date('Y-m-d H:i:s')),
+            array('description'=>'Action'),
+            array('description'=>'RPG'),
+            array('description'=>'Horror'),
+            array('description'=>'Puzzle'),
+            array('description'=>'Multiplayer'),
         );
 
         category::insert($data);

@@ -20,7 +20,28 @@
 
         <hr class="mt-4">
 
-        <p>genre: {{$product->category->description}}</p>
+        <p>Category: 
+            
+        @if(count($product->categories) != 0)
+            
+            @foreach($product->categories as $category)
+
+                {{$category->description}}
+
+                @if(!$loop->last)
+                
+                    {{", "}}
+
+                @endif
+
+            @endforeach
+
+        @else
+
+        No category.
+
+        @endif
+        </p>
        
         <p>Price: €{{$product->price}},-</p>
          

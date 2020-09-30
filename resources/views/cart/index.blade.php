@@ -4,7 +4,7 @@
 
 @include('inc.genre-navbar')
 
-<div class="container bg-dark p-0">
+<div class="container bg-light p-0">
 
 <div class="row justify-content-center">
 
@@ -25,8 +25,28 @@
   </div>
   <div class="card-body">
 
-    Genre: {{$item['product']->category->description}}
+    <p>Category: 
 
+    @if(count($item['product']->categories) != 0)
+
+      @foreach($item['product']->categories as $category)
+
+        {{$category->description}}
+
+        @if(!$loop->last)
+        
+          {{", "}}
+        
+        @endif
+
+      @endforeach
+
+    @else
+
+      no category
+
+    @endif
+    </p>
     <hr>
 
     Quantity: {{$item['quantity']}}

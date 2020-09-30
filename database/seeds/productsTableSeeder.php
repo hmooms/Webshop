@@ -11,6 +11,12 @@ class productsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory('VRSense\product', 300)->create();
+        factory('VRSense\product', 100)->create();
+
+        foreach (\VRSense\product::all() as $product)
+        {
+            $categories = \VRSense\category::inRandomOrder()->take(rand(0,3))->pluck('id');
+            $product->categories()->attach($categories);
+        }
     }
 }

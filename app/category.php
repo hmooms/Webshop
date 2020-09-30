@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class category extends Model
 {
+    public $timestamps = false;
+
     public function products(){
-        return $this->hasMany('VRSense\product');
+        return $this->belongsToMany('VRSense\product');
     }
 }
